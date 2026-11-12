@@ -1,0 +1,52 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+
+        
+
+        
+
+        #last value graeter than next first
+
+        l = 0 
+        r = len(matrix) - 1
+
+        while l<=r:
+
+            m = (r + l + 1 )//2
+
+            if matrix[m][0] > target:
+                r = m - 1
+            elif matrix[m][-1] < target:
+                l = m + 1
+            else:
+                break
+        
+
+        l = 0 
+        r = len(matrix[0]) - 1 
+
+        while l<=r:
+
+            m2 = (r + l + 1 )//2
+
+            if matrix[m][m2] > target:
+                r = m2 - 1
+            elif matrix[m][m2] < target:
+                l = m2 + 1
+            else:
+                return True
+        
+        return False
+        
+        
+        
+
+
+
+
+        
+
+
+        
+
+
